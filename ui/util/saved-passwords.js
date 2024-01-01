@@ -32,7 +32,7 @@ function setCookie(name, value, expirationDaysOnWeb) {
 
   let cookie = `${name}=${value || ''}; ${expires} path=/;`;
   if (isProduction) {
-    cookie += ` SameSite=None;`;
+    cookie += ` SameSite=Strict;`;
   }
   if (!isProduction) {
     cookie += ` SameSite=Lax;`;
